@@ -35,5 +35,8 @@ class Game():
     def minus_guess(self):
         self.guesses_left -= 1
 
+    def character_not_in_word(self, char):
+        return char not in self.word_to_guess
+
 
 

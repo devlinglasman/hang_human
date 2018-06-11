@@ -60,3 +60,13 @@ class TestGame():
         game.minus_guess()
 
         assert game.get_guesses_left() == 9
+
+    def test_character_not_in_word_true(self):
+        game = Game("crafter")
+
+        assert game.character_not_in_word("z") == True
+
+    def test_character_not_in_word_false(self):
+        game = Game("crafter")
+
+        assert game.character_not_in_word("a") == False

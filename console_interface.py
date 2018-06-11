@@ -15,6 +15,15 @@ class ConsoleInterface(object):
     def ask_for_letter_choice(self):
         self._out_stream.write("Please enter a letter.")
 
+    def present_guesses_left(self, guesses_left):
+        self._out_stream.write("You have " + guesses_left + " guesses left.")
+
+    def lost_message(self):
+        self._out_stream.write("You lost... now YOU will be hanged!")
+
+    def won_message(self):
+        self._out_stream.write("You won! You saved the human!")
+
     def get_user_guess(self):
         return self._get_input()
 
