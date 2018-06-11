@@ -12,7 +12,7 @@ class Game():
                     converted_word.append(char_in_word_to_guess)
                 else: 
                     converted_word.append("_")
-        return converted_word
+        return ''.join(converted_word)
 
     def character_present(self, word, char):
         return char in word
