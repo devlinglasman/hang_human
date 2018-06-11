@@ -11,13 +11,14 @@ class GameRunner():
         console_interface.welcome_message()
         secret_word = game.convert_word()
 
-        while "_" in secret_word:
+        while "_" in secret_word and not self.game.game_lost():
             console_interface.present_converted_word(secret_word)
             console_interface.ask_for_letter_choice()
             chosen_letter = console_interface.get_user_guess()
             game.add_character_to_chosen_characters(chosen_letter)
             secret_word = game.convert_word()
             console_interface.present_converted_word(secret_word)
+            game.minus_guess()
         else:
             print "You won!"
 

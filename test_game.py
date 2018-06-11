@@ -41,3 +41,22 @@ class TestGame():
         game.add_character_to_chosen_characters("b")
 
         assert game.get_chosen_characters() == ["", "a", "b"]
+
+    def test_game_lost(self):
+        game = Game("crafter")
+
+        game.set_guesses_left(0)
+
+        assert game.game_lost() == True
+
+    def test_game_lost(self):
+        game = Game("crafter")
+
+        assert game.game_lost() == False 
+
+    def test_minus_guess(self):
+        game = Game("crafter")
+
+        game.minus_guess()
+
+        assert game.get_guesses_left() == 9

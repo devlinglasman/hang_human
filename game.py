@@ -3,6 +3,7 @@ class Game():
     def __init__(self, word_to_guess):
         self.word_to_guess = word_to_guess
         self.chosen_characters = [""]
+        self.guesses_left = 10
 
     def convert_word(self):
         converted_word = []
@@ -21,6 +22,18 @@ class Game():
 
     def get_chosen_characters(self):
         return self.chosen_characters
+
+    def set_guesses_left(self, guesses_left):
+        self.guesses_left = guesses_left
+
+    def get_guesses_left(self):
+        return self.guesses_left
+
+    def game_lost(self):
+        return self.guesses_left == 0
+
+    def minus_guess(self):
+        self.guesses_left -= 1
 
 
 
