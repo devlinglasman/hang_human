@@ -2,11 +2,17 @@ class Game():
 
     def __init__(self, word_to_guess):
         self.word_to_guess = word_to_guess
-        self.chosen_characters = []
+        self.chosen_characters = [""]
 
-    def hide_word(self, word):
-        hidden_word = len(word) * "_"
-        return hidden_word
+    def hide_word(self):
+        converted_word = []
+        for char_in_word_to_guess in self.word_to_guess:
+            for chosen_char in self.chosen_characters:
+                if char_in_word_to_guess == chosen_char: 
+                    converted_word.append(char_in_word_to_guess)
+                else: 
+                    converted_word.append("_")
+        return converted_word
 
     def character_present(self, word, char):
         return char in word
