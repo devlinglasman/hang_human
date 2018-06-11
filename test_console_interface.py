@@ -14,7 +14,7 @@ class TestConsoleInterface():
         console_interface = ConsoleInterface(output_stream)
         console_interface.welcome_message()
 
-        expected_output = "Welcome to Hang_Human! You have 10 guesses to figure out the secret word! Good luck!"
+        expected_output = "Welcome to Hang_Human! You have 10 guesses to figure out the secret word! Each time you choose incorrectly, you'll lose a guess! Good luck!"
         
         assert output_stream.getvalue() == expected_output
 
@@ -23,7 +23,7 @@ class TestConsoleInterface():
         console_interface = ConsoleInterface(output_stream)
         console_interface.present_converted_word("___")
 
-        expected_output = "Word: ___"
+        expected_output = "\nWord: ___"
         
         assert output_stream.getvalue() == expected_output
 
@@ -32,7 +32,7 @@ class TestConsoleInterface():
         console_interface = ConsoleInterface(output_stream)
         console_interface.ask_for_letter_choice()
 
-        expected_output = "Please enter a letter."
+        expected_output = "\nPlease enter a letter."
         
         assert output_stream.getvalue() == expected_output
 
@@ -41,7 +41,7 @@ class TestConsoleInterface():
         console_interface = ConsoleInterface(output_stream)
         console_interface.present_guesses_left("10")
 
-        expected_output = "You have 10 guesses left."
+        expected_output = "\nYou have 10 guesses left."
         
         assert output_stream.getvalue() == expected_output
 
@@ -50,7 +50,7 @@ class TestConsoleInterface():
         console_interface = ConsoleInterface(output_stream)
         console_interface.lost_message()
 
-        expected_output = "You lost... now YOU will be hanged!"
+        expected_output = "\nYou lost... now YOU will be hanged!"
         
         assert output_stream.getvalue() == expected_output
 
@@ -59,7 +59,7 @@ class TestConsoleInterface():
         console_interface = ConsoleInterface(output_stream)
         console_interface.won_message()
 
-        expected_output = "You won! You saved the human!"
+        expected_output = "\nYou won! You saved the human!"
         
         assert output_stream.getvalue() == expected_output
 

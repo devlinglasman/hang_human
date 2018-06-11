@@ -9,20 +9,20 @@ class ConsoleInterface(object):
         self._out_stream.write("Welcome to Hang_Human! You have 10 guesses to figure out the secret word! Good luck!")
 
     def present_converted_word(self, converted_word):
-        content = "Word: " + converted_word
+        content = "\nWord: " + converted_word
         self._out_stream.write(content)
 
     def ask_for_letter_choice(self):
-        self._out_stream.write("Please enter a letter.")
+        self._out_stream.write("\nPlease enter a letter.")
 
     def present_guesses_left(self, guesses_left):
-        self._out_stream.write("You have " + guesses_left + " guesses left.")
+        self._out_stream.write("\nYou have " + guesses_left + " guesses left.")
 
     def lost_message(self):
-        self._out_stream.write("You lost... now YOU will be hanged!")
+        self._out_stream.write("\nYou lost... now YOU will be hanged!")
 
     def won_message(self):
-        self._out_stream.write("You won! You saved the human!")
+        self._out_stream.write("\nYou won! You saved the human!")
 
     def get_user_guess(self):
         return self._get_input()
