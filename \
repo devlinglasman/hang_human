@@ -1,9 +1,0 @@
-import pytest
-
-from game import *
-
-class TestGame():
-
-    def test_inc(self):
-        game = Game()
-        assert game.inc(3) == 5
