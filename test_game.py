@@ -4,14 +4,20 @@ from game import *
 
 class TestGame():
 
-    def test_hide_word1(self):
+    def test_convert_word1(self):
         game = Game(["c", "r", "a"])
+        assert game.convert_word() == "___"
 
-        assert game.hide_word() == ["_","_","_"]
-
-    def test_hide_word2(self):
+    def test_convert_word2(self):
         game = Game("devlin")
-        assert game.hide_word() == ["_", "_", "_", "_", "_", "_"]
+        assert game.convert_word() == "______"
+
+    def test_convert_word3(self):
+        game = Game("crafter")
+
+        game.add_character_to_chosen_characters("a")
+
+        assert game.convert_word() == "__a____"
 
     def test_character_present_is_true(self):
         game = Game("")

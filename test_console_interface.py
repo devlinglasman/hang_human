@@ -9,6 +9,15 @@ def mock_input_function():
 
 class TestConsoleInterface():
 
+    def test_welcome_message(self):
+        output_stream = StringIO()
+        console_interface = ConsoleInterface(output_stream)
+        console_interface.welcome_message()
+
+        expected_output = "Welcome to Hang_Human! You have 10 guesses to figure out the secret word! Good luck!"
+        
+        assert output_stream.getvalue() == expected_output
+
     def test_present_converted_word(self):
         output_stream = StringIO()
         console_interface = ConsoleInterface(output_stream)
